@@ -268,6 +268,7 @@ export const PartnerCareers: React.FC<PartnerCareersProps> = ({
 
           {/* Careers Opportunities Card */}
           <motion.div
+            id="careers"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

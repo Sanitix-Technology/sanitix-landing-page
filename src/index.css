@@ -389,3 +389,14 @@ netlify-drawer {
   width: 0 !important;
   height: 0 !important;
 }
+
+/* Smooth anchor offsets for sticky header */
+#services,
+#how-it-works,
+#why-choose-us,
+#about-us,
+#partner-careers,
+#careers,
+#contact {
+  scroll-margin-top: 70px;
+}

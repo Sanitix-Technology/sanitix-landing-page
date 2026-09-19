@@ -70,7 +70,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     if (window.location.hash === "#404") {
       window.location.hash = "";
     }
-    const element = document.getElementById(anchorId);
+    const element =
+      document.getElementById(anchorId) ||
+      (anchorId === "careers" ? document.getElementById("partner-careers") : null) ||
+      (anchorId === "contact" || anchorId === "footer" ? document.getElementById("contact") : null);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -266,7 +269,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </button>
 
           <button
-            onClick={() => handleNavClick("footer")}
+            onClick={() => handleNavClick("careers")}
             style={{ background: "none", border: "none", fontFamily: "var(--font-sans)", fontSize: "15px", fontWeight: 600, color: "#1F2937", cursor: "pointer", padding: "8px 10px", borderRadius: "8px", transition: "all 0.2s" }}
             onMouseOver={(e) => {
               e.currentTarget.style.color = "#00A859";
@@ -281,7 +284,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </button>
 
           <button
-            onClick={() => handleNavClick("footer")}
+            onClick={() => handleNavClick("contact")}
             style={{ background: "none", border: "none", fontFamily: "var(--font-sans)", fontSize: "15px", fontWeight: 600, color: "#1F2937", cursor: "pointer", padding: "8px 10px", borderRadius: "8px", transition: "all 0.2s" }}
             onMouseOver={(e) => {
               e.currentTarget.style.color = "#00A859";
@@ -587,14 +590,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               </button>
 
               <button
-                onClick={() => handleNavClick("footer")}
+                onClick={() => handleNavClick("careers")}
                 style={{ textAlign: "left", background: "none", border: "none", fontSize: "17px", fontWeight: 700, color: "#111827", padding: "8px 0", cursor: "pointer" }}
               >
                 Careers
               </button>
 
               <button
-                onClick={() => handleNavClick("footer")}
+                onClick={() => handleNavClick("contact")}
                 style={{ textAlign: "left", background: "none", border: "none", fontSize: "17px", fontWeight: 700, color: "#111827", padding: "8px 0", cursor: "pointer" }}
               >
                 Contact Us
