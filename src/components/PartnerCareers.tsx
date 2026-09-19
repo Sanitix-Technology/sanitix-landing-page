@@ -628,7 +628,7 @@ export const PartnerCareers: React.FC<PartnerCareersProps> = ({
                   </div>
                   <div style={{ position: 'relative', zIndex: 1 }}>
                     <div style={{ fontSize: '13px', fontWeight: 700, color: '#0F172A', lineHeight: 1.25 }}>
-                      Download the Pilot App
+                      Download the Sanitix Pilot App
                     </div>
                     <div style={{ fontSize: '11px', color: '#64748B', lineHeight: 1.35, marginTop: '2px' }}>
                       Get the app from Google Play Store.

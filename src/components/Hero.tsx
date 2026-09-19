@@ -332,9 +332,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
                                     height: "auto",
                                     objectFit: "contain",
                                     objectPosition: "top right",
-                                    maxHeight: "min(500px, 50vh)",
+                                    maxHeight: "none",
                                     display: "block",
-                                    transform: "scale(1.04)",
+                                    transform: "scale(1.12)",
                                     transformOrigin: "top right",
                                     /* ── Asymmetric mask: center vehicles = 100% sharp.
                                           Right & bottom outer background edges fade into page.
@@ -387,9 +387,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
                         paddingTop: "16px",
                         paddingBottom: "26px",
                         marginTop: "auto",
-                        width: "100%",
-                        position: "relative",
-                        zIndex: 10
+                        width: "100%"
                     }}
                     className="guarantees-strip"
                 >
@@ -493,42 +491,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
 
         .trust-pill-text-short {
           display: none;
-        }
-
-        /* Standard Laptops & Landscape Screens with compact viewport height */
-        @media (min-width: 1025px) and (max-width: 1440px) {
-          .hero-section {
-            min-height: calc(100vh - 60px) !important;
-            padding-bottom: 24px !important;
-          }
-          .hero-collage-img {
-            max-height: clamp(340px, 46vh, 460px) !important;
-            transform: scale(1.03) !important;
-            transform-origin: center right !important;
-          }
-          .guarantees-strip {
-            margin-top: 18px !important;
-            position: relative !important;
-            z-index: 10 !important;
-          }
-        }
-
-        /* Any desktop/laptop with short viewport height (e.g. <= 850px) */
-        @media (min-width: 768px) and (max-height: 850px) {
-          .hero-section {
-            min-height: auto !important;
-            padding-bottom: 20px !important;
-          }
-          .hero-collage-img {
-            max-height: min(420px, 44vh) !important;
-            transform: scale(1.02) !important;
-            transform-origin: center right !important;
-          }
-          .guarantees-strip {
-            margin-top: 16px !important;
-            position: relative !important;
-            z-index: 10 !important;
-          }
         }
 
         /* Tablet Universal Adaptation (iPad Mini 768px, Surface Pro 960px, iPad Pro 1032px in portrait)
@@ -647,9 +609,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
 
         /* Mobile Viewport (<768px): Stacks into 1 column */
         @media (max-width: 767px) {
-          .hero-trust-pill {
-            display: none !important;
-          }
           .hero-section {
             min-height: auto !important;
             justify-content: flex-start !important;
@@ -679,8 +638,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
             object-fit: contain !important;
             object-position: center !important;
             margin: 0 auto !important;
-            -webkit-mask-image: radial-gradient(ellipse 48% 46% at 50% 50%, black 20%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.3) 75%, transparent 96%) !important;
-            mask-image: radial-gradient(ellipse 48% 46% at 50% 50%, black 20%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.3) 75%, transparent 96%) !important;
           }
           .hero-left-fade-overlay {
             display: none !important;
@@ -735,8 +692,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
           }
           .hero-collage-img {
             max-height: clamp(210px, 32vh, 290px) !important;
-            -webkit-mask-image: radial-gradient(ellipse 48% 46% at 50% 50%, black 20%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.3) 75%, transparent 96%) !important;
-            mask-image: radial-gradient(ellipse 48% 46% at 50% 50%, black 20%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.3) 75%, transparent 96%) !important;
           }
           .guarantees-strip {
             grid-template-columns: 1fr 1fr !important;
@@ -761,6 +716,27 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
         }
 
         @media (max-width: 480px) {
+          .hero-trust-pill {
+            gap: 6px !important;
+            padding: 5px 10px 5px 8px !important;
+            margin-bottom: 10px !important;
+          }
+          .trust-pill-text-full {
+            display: none !important;
+          }
+          .trust-pill-text-short {
+            display: inline !important;
+            font-size: 12px !important;
+            font-weight: 700 !important;
+          }
+          .trust-pill-badge {
+            display: none !important;
+          }
+          .trust-pill-avatars img {
+            width: 20px !important;
+            height: 20px !important;
+            margin-left: -5px !important;
+          }
           .hero-cta-group {
             gap: 8px !important;
             margin-bottom: 18px !important;

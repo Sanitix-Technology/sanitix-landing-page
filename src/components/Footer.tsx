@@ -4,10 +4,10 @@ import { Phone, Mail, MapPin, X } from 'lucide-react';
 interface FooterProps {
   onOpenBooking: () => void;
   onOpenPartnerModal?: () => void;
+  onNavigateToLegal?: (type: 'privacy' | 'terms') => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, onOpenPartnerModal }) => {
-  // Modals for footer links (100% client-side, no backend/DB needed)
+export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, onOpenPartnerModal, onNavigateToLegal }) => {
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | 'partnerLogin' | null>(null);
 
   const scrollToSection = (id: string) => {
@@ -55,225 +55,260 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
             }}
           />
 
-        {/* Primary Footer Navigation */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '2.1fr 1fr 1.15fr 1fr 1fr',
-            gap: '38px',
-            paddingBottom: '40px',
-            alignItems: 'start'
-          }}
-          className="footer-nav-grid"
-        >
-          {/* Brand & Contact Column */}
-          <div>
-            {/* Official Sanitix Logo for Dark Background */}
-            <div style={{ marginBottom: '18px' }}>
-              <img
-                src="/images/sanitix_logo_white.webp"
-                alt="SanitiX"
-                style={{
-                  height: '38px',
-                  width: 'auto',
-                  objectFit: 'contain',
-                  display: 'block'
-                }}
-              />
-            </div>
-
-            <p
-              style={{
-                fontSize: '13px',
-                color: '#8E9F97',
-                lineHeight: 1.6,
-                maxWidth: '310px',
-                marginBottom: '20px'
-              }}
-            >
-              Sanitix connects customers with trusted service providers for water, heavy equipment, cleaning and sanitation needs—all through one simple platform.
-            </p>
-
-            {/* Direct Contact Details: Email, Phone, Address */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '11px', marginBottom: '22px' }}>
-              {/* Email */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Mail size={15} color="#10B981" />
-                <a
-                  href="mailto:support@sanitix.in"
+          {/* Primary Footer Navigation */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '2.1fr 1fr 1.15fr 1fr 1fr',
+              gap: '38px',
+              paddingBottom: '40px',
+              alignItems: 'start'
+            }}
+            className="footer-nav-grid"
+          >
+            {/* Brand & Contact Column */}
+            <div>
+              {/* Official Sanitix Logo for Dark Background */}
+              <div style={{ marginBottom: '18px' }}>
+                <img
+                  src="/images/sanitix_logo_white.webp"
+                  alt="SanitiX"
                   style={{
-                    fontSize: '13.5px',
-                    color: '#D1D5DB',
-                    textDecoration: 'none',
-                    fontWeight: 500,
-                    transition: 'color 0.2s'
+                    height: '38px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    display: 'block'
                   }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
-                  onMouseOut={(e) => (e.currentTarget.style.color = '#D1D5DB')}
-                >
-                  support@sanitix.in
-                </a>
+                />
               </div>
 
-              {/* Phone */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Phone size={15} color="#10B981" />
-                <a
-                  href="tel:+912269710156"
-                  style={{
-                    fontSize: '13.5px',
-                    color: '#D1D5DB',
-                    textDecoration: 'none',
-                    fontWeight: 500,
-                    transition: 'color 0.2s'
-                  }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
-                  onMouseOut={(e) => (e.currentTarget.style.color = '#D1D5DB')}
-                >
-                  +91 22697 10156
-                </a>
-              </div>
-
-              {/* Address */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                <MapPin size={15} color="#10B981" style={{ marginTop: '3px', flexShrink: 0 }} />
-                <span style={{ fontSize: '13px', color: '#9CA3AF', lineHeight: 1.45 }}>
-                  Sanitix Technologies Pvt. Ltd.<br />
-                  Gurugram, Haryana, India
-                </span>
-              </div>
-            </div>
-
-            {/* Social Icons (Instagram & LinkedIn Only) */}
-            <div style={{ display: 'flex', gap: '10px' }}>
-              {/* Instagram */}
-              <a
-                href="https://www.instagram.com/sanitix_technology?stkn=MXRxdnRzejIyNjlwaQ=="
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
+              <p
                 style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  backgroundColor: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#D1D5DB',
-                  textDecoration: 'none',
-                  transition: 'background-color 0.2s, color 0.2s, transform 0.15s'
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = '#10B981';
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.06)';
-                  e.currentTarget.style.color = '#D1D5DB';
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  fontSize: '13px',
+                  color: '#8E9F97',
+                  lineHeight: 1.6,
+                  maxWidth: '310px',
+                  marginBottom: '20px'
                 }}
               >
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </a>
+                Sanitix connects customers with trusted service providers for water, heavy equipment, cleaning and sanitation needs—all through one simple platform.
+              </p>
 
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/company/sanitix-technology/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  backgroundColor: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#D1D5DB',
-                  textDecoration: 'none',
-                  transition: 'background-color 0.2s, color 0.2s, transform 0.15s'
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = '#10B981';
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.06)';
-                  e.currentTarget.style.color = '#D1D5DB';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links Column */}
-          <div>
-            <h4 style={{ fontSize: '14.5px', fontWeight: 700, color: '#FFFFFF', marginBottom: '18px' }}>
-              Quick Links
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {[
-                { name: 'Home', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
-                { name: 'Services', action: () => scrollToSection('services') },
-                { name: 'How It Works', action: () => scrollToSection('how-it-works') },
-                { name: 'For Partners', action: () => scrollToSection('partner-careers') },
-                { name: 'About Us', action: () => scrollToSection('about-us') },
-                { name: 'Careers', action: () => scrollToSection('partner-careers') },
-                { name: 'Contact Us', action: () => scrollToSection('contact') }
-              ].map((item, i) => (
-                <li key={i}>
-                  <button
-                    onClick={item.action}
+              {/* Direct Contact Details: Email, Phone, Address */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '11px', marginBottom: '22px' }}>
+                {/* Email */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <Mail size={15} color="#10B981" />
+                  <a
+                    href="mailto:support@sanitix.in"
                     style={{
-                      background: 'none',
-                      border: 'none',
-                      padding: 0,
-                      color: '#8E9F97',
                       fontSize: '13.5px',
-                      cursor: 'pointer',
-                      textAlign: 'left',
+                      color: '#D1D5DB',
+                      textDecoration: 'none',
+                      fontWeight: 500,
                       transition: 'color 0.2s'
                     }}
                     onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
-                    onMouseOut={(e) => (e.currentTarget.style.color = '#8E9F97')}
+                    onMouseOut={(e) => (e.currentTarget.style.color = '#D1D5DB')}
                   >
-                    {item.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    support@sanitix.in
+                  </a>
+                </div>
 
-          {/* Services Column */}
-          <div>
-            <h4 style={{ fontSize: '14.5px', fontWeight: 700, color: '#FFFFFF', marginBottom: '18px' }}>
-              Services
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {[
-                'Water Services',
-                'Deep Cleaning',
-                'Heavy Equipment',
-                'JCB and Loader',
-                'Drainage & Sewer',
-                'Sanitation'
-              ].map((service, i) => (
-                <li key={i}>
+                {/* Phone */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <Phone size={15} color="#10B981" />
+                  <a
+                    href="tel:+912269710156"
+                    style={{
+                      fontSize: '13.5px',
+                      color: '#D1D5DB',
+                      textDecoration: 'none',
+                      fontWeight: 500,
+                      transition: 'color 0.2s'
+                    }}
+                    onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
+                    onMouseOut={(e) => (e.currentTarget.style.color = '#D1D5DB')}
+                  >
+                    +91 22697 10156
+                  </a>
+                </div>
+
+                {/* Address */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <MapPin size={15} color="#10B981" style={{ marginTop: '3px', flexShrink: 0 }} />
+                  <span style={{ fontSize: '13px', color: '#9CA3AF', lineHeight: 1.45 }}>
+                    Sanitix Technologies Pvt. Ltd.<br />
+                    Gurugram, Haryana, India
+                  </span>
+                </div>
+              </div>
+
+              {/* Social Icons (Instagram & LinkedIn Only) */}
+              <div style={{ display: 'flex', gap: '10px' }}>
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/sanitix_technology?stkn=MXRxdnRzejIyNjlwaQ=="
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  style={{
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
+                    transition: 'background-color 0.2s, color 0.2s, transform 0.15s'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.backgroundColor = '#10B981';
+                    e.currentTarget.style.color = '#FFFFFF';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.06)';
+                    e.currentTarget.style.color = '#D1D5DB';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/company/sanitix-technology/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  style={{
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
+                    transition: 'background-color 0.2s, color 0.2s, transform 0.15s'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.backgroundColor = '#10B981';
+                    e.currentTarget.style.color = '#FFFFFF';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.06)';
+                    e.currentTarget.style.color = '#D1D5DB';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links Column */}
+            <div>
+              <h4 style={{ fontSize: '14.5px', fontWeight: 700, color: '#FFFFFF', marginBottom: '18px' }}>
+                Quick Links
+              </h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {[
+                  { name: 'Home', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
+                  { name: 'Services', action: () => scrollToSection('services') },
+                  { name: 'How It Works', action: () => scrollToSection('how-it-works') },
+                  { name: 'For Partners', action: () => scrollToSection('partner-careers') },
+                  { name: 'About Us', action: () => scrollToSection('about-us') },
+                  { name: 'Careers', action: () => scrollToSection('partner-careers') },
+                  { name: 'Contact Us', action: () => scrollToSection('contact') }
+                ].map((item, i) => (
+                  <li key={i}>
+                    <button
+                      onClick={item.action}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        padding: 0,
+                        color: '#8E9F97',
+                        fontSize: '13.5px',
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                        transition: 'color 0.2s'
+                      }}
+                      onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
+                      onMouseOut={(e) => (e.currentTarget.style.color = '#8E9F97')}
+                    >
+                      {item.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services Column */}
+            <div>
+              <h4 style={{ fontSize: '14.5px', fontWeight: 700, color: '#FFFFFF', marginBottom: '18px' }}>
+                Services
+              </h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {[
+                  'Water Services',
+                  'Deep Cleaning',
+                  'Heavy Equipment',
+                  'JCB and Loader',
+                  'Drainage & Sewer',
+                  'Sanitation'
+                ].map((service, i) => (
+                  <li key={i}>
+                    <button
+                      onClick={() => {
+                        scrollToSection('services');
+                      }}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        padding: 0,
+                        color: '#8E9F97',
+                        fontSize: '13.5px',
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                        transition: 'color 0.2s'
+                      }}
+                      onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
+                      onMouseOut={(e) => (e.currentTarget.style.color = '#8E9F97')}
+                    >
+                      {service}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* For Partners Column */}
+            <div>
+              <h4 style={{ fontSize: '14.5px', fontWeight: 700, color: '#FFFFFF', marginBottom: '18px' }}>
+                For Partners
+              </h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <li>
                   <button
                     onClick={() => {
-                      scrollToSection('services');
+                      if (onOpenPartnerModal) {
+                        onOpenPartnerModal();
+                      } else {
+                        window.dispatchEvent(new CustomEvent('open-partner-modal'));
+                      }
                     }}
                     style={{
                       background: 'none',
@@ -288,113 +323,122 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                     onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
                     onMouseOut={(e) => (e.currentTarget.style.color = '#8E9F97')}
                   >
-                    {service}
+                    Partner with Us
                   </button>
                 </li>
-              ))}
-            </ul>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+              </ul>
+            </div>
+
+            {/* Support Column */}
+            <div>
+              <h4 style={{ fontSize: '14.5px', fontWeight: 700, color: '#FFFFFF', marginBottom: '18px' }}>
+                Support
+              </h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <li>
+                  <a
+                    href="/terms"
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      color: '#8E9F97',
+                      fontSize: '13.5px',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      transition: 'color 0.08s ease, transform 0.08s ease, opacity 0.08s ease',
+                      textDecoration: 'none',
+                      display: 'inline-block'
+                    }}
+                    onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.color = '#8E9F97';
+                      e.currentTarget.style.opacity = '1';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                    onMouseDown={(e) => {
+                      e.currentTarget.style.opacity = '0.7';
+                      e.currentTarget.style.transform = 'scale(0.97)';
+                    }}
+                    onMouseUp={(e) => {
+                      e.currentTarget.style.opacity = '1';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (onNavigateToLegal) {
+                        onNavigateToLegal('terms');
+                      } else {
+                        setActiveModal('terms');
+                      }
+                    }}
+                  >
+                    Terms &amp; Conditions
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/privacy"
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      color: '#8E9F97',
+                      fontSize: '13.5px',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      transition: 'color 0.08s ease, transform 0.08s ease, opacity 0.08s ease',
+                      textDecoration: 'none',
+                      display: 'inline-block'
+                    }}
+                    onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.color = '#8E9F97';
+                      e.currentTarget.style.opacity = '1';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                    onMouseDown={(e) => {
+                      e.currentTarget.style.opacity = '0.7';
+                      e.currentTarget.style.transform = 'scale(0.97)';
+                    }}
+                    onMouseUp={(e) => {
+                      e.currentTarget.style.opacity = '1';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (onNavigateToLegal) {
+                        onNavigateToLegal('privacy');
+                      } else {
+                        setActiveModal('privacy');
+                      }
+                    }}
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* For Partners Column */}
-          <div>
-            <h4 style={{ fontSize: '14.5px', fontWeight: 700, color: '#FFFFFF', marginBottom: '18px' }}>
-              For Partners
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <li>
-                <button
-                  onClick={() => {
-                    if (onOpenPartnerModal) {
-                      onOpenPartnerModal();
-                    } else {
-                      window.dispatchEvent(new CustomEvent('open-partner-modal'));
-                    }
-                  }}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    padding: 0,
-                    color: '#8E9F97',
-                    fontSize: '13.5px',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    transition: 'color 0.2s'
-                  }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
-                  onMouseOut={(e) => (e.currentTarget.style.color = '#8E9F97')}
-                >
-                  Partner with Us
-                </button>
-              </li>
-              <li>
-
-              </li>
-              <li>
-
-              </li>
-            </ul>
+          {/* Copyright Bar */}
+          <div
+            style={{
+              borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+              paddingTop: '24px',
+              textAlign: 'center',
+              fontSize: '13px',
+              color: '#6B7280'
+            }}
+          >
+            © 2026 Sanitix (A Pairow Group Company). All rights reserved.
           </div>
-
-          {/* Support Column */}
-          <div>
-            <h4 style={{ fontSize: '14.5px', fontWeight: 700, color: '#FFFFFF', marginBottom: '18px' }}>
-              Support
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <li>
-                <button
-                  onClick={() => setActiveModal('terms')}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    padding: 0,
-                    color: '#8E9F97',
-                    fontSize: '13.5px',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    transition: 'color 0.2s'
-                  }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
-                  onMouseOut={(e) => (e.currentTarget.style.color = '#8E9F97')}
-                >
-                  Terms & Conditions
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setActiveModal('privacy')}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    padding: 0,
-                    color: '#8E9F97',
-                    fontSize: '13.5px',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    transition: 'color 0.2s'
-                  }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
-                  onMouseOut={(e) => (e.currentTarget.style.color = '#8E9F97')}
-                >
-                  Privacy Policy
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Copyright Bar */}
-        <div
-          style={{
-            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-            paddingTop: '24px',
-            textAlign: 'center',
-            fontSize: '13px',
-            color: '#6B7280'
-          }}
-        >
-          © 2026 Sanitix (A Pairow Group Company). All rights reserved.
-        </div>
         </div>
       </div>
 
