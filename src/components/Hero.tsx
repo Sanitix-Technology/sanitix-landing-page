@@ -332,9 +332,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
                                     height: "auto",
                                     objectFit: "contain",
                                     objectPosition: "top right",
-                                    maxHeight: "none",
+                                    maxHeight: "min(500px, 50vh)",
                                     display: "block",
-                                    transform: "scale(1.12)",
+                                    transform: "scale(1.04)",
                                     transformOrigin: "top right",
                                     /* ── Asymmetric mask: center vehicles = 100% sharp.
                                           Right & bottom outer background edges fade into page.
@@ -387,7 +387,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
                         paddingTop: "16px",
                         paddingBottom: "26px",
                         marginTop: "auto",
-                        width: "100%"
+                        width: "100%",
+                        position: "relative",
+                        zIndex: 10
                     }}
                     className="guarantees-strip"
                 >
@@ -491,6 +493,42 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreServices }) 
 
         .trust-pill-text-short {
           display: none;
+        }
+
+        /* Standard Laptops & Landscape Screens with compact viewport height */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+          .hero-section {
+            min-height: calc(100vh - 60px) !important;
+            padding-bottom: 24px !important;
+          }
+          .hero-collage-img {
+            max-height: clamp(340px, 46vh, 460px) !important;
+            transform: scale(1.03) !important;
+            transform-origin: center right !important;
+          }
+          .guarantees-strip {
+            margin-top: 18px !important;
+            position: relative !important;
+            z-index: 10 !important;
+          }
+        }
+
+        /* Any desktop/laptop with short viewport height (e.g. <= 850px) */
+        @media (min-width: 768px) and (max-height: 850px) {
+          .hero-section {
+            min-height: auto !important;
+            padding-bottom: 20px !important;
+          }
+          .hero-collage-img {
+            max-height: min(420px, 44vh) !important;
+            transform: scale(1.02) !important;
+            transform-origin: center right !important;
+          }
+          .guarantees-strip {
+            margin-top: 16px !important;
+            position: relative !important;
+            z-index: 10 !important;
+          }
         }
 
         /* Tablet Universal Adaptation (iPad Mini 768px, Surface Pro 960px, iPad Pro 1032px in portrait)

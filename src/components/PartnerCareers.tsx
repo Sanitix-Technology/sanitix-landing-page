@@ -586,7 +586,7 @@ export const PartnerCareers: React.FC<PartnerCareersProps> = ({
                     margin: 0
                   }}
                 >
-                  Become a Sanitix<br />Partner
+                  Become a Sanitix<br />Pilot
                 </h2>
 
                 {/* Subtitle */}
@@ -600,7 +600,7 @@ export const PartnerCareers: React.FC<PartnerCareersProps> = ({
                     maxWidth: '360px'
                   }}
                 >
-                  Download the Sanitix Partner App to join our pilot program. Complete your KYC and vehicle details, and start accepting bookings in your city.
+                  Download the Sanitix Pilot App to join our pilot program. Complete your KYC and vehicle details, and start accepting bookings in your city.
                 </p>
 
                 {/* Step 1 */}
@@ -628,7 +628,7 @@ export const PartnerCareers: React.FC<PartnerCareersProps> = ({
                   </div>
                   <div style={{ position: 'relative', zIndex: 1 }}>
                     <div style={{ fontSize: '13px', fontWeight: 700, color: '#0F172A', lineHeight: 1.25 }}>
-                      Download the Partner App
+                      Download the Pilot App
                     </div>
                     <div style={{ fontSize: '11px', color: '#64748B', lineHeight: 1.35, marginTop: '2px' }}>
                       Get the app from Google Play Store.
