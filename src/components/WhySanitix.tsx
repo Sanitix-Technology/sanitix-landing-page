@@ -150,7 +150,8 @@ export const WhySanitix: React.FC<WhySanitixProps> = ({
                     letterSpacing: '-0.025em'
                   }}
                 >
-                  Everything You Need,<br className="ref-br" />
+                  Everything You Need,{' '}
+                  <br className="ref-br" />
                   All in{' '}
                   <span
                     style={{
@@ -421,8 +422,10 @@ export const WhySanitix: React.FC<WhySanitixProps> = ({
                     letterSpacing: '-0.025em'
                   }}
                 >
-                  One Platform for<br className="ref-br" />
-                  Services That<br className="ref-br" />
+                  One Platform for{' '}
+                  <br className="ref-br" />
+                  Services That{' '}
+                  <br className="ref-br" />
                   <span style={{ color: '#34D399' }}>Keep Life Moving</span>
                 </h2>
 
