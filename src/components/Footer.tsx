@@ -466,7 +466,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
               color: '#6B7280'
             }}
           >
-            © 2026 Sanitix (A Pairow Group Company). All rights reserved.
+            © 2026 Sanitix Technology (A Pairow Group Company). All rights reserved.
           </div>
         </div>
       </div>
