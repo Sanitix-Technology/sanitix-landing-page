@@ -138,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                   <MapPin size={15} color="#10B981" style={{ marginTop: '3px', flexShrink: 0 }} />
                   <span style={{ fontSize: '13px', color: '#9CA3AF', lineHeight: 1.45 }}>
-                    Sanitix Technologies Pvt. Ltd.<br />
+                    Sanitix Technology.<br />
                     Gurugram, Haryana, India
                   </span>
                 </div>
@@ -562,7 +562,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                       1. Our Commitment to Privacy
                     </h4>
                     <p style={{ margin: 0, color: '#9CA3AF' }}>
-                      At Sanitix Technologies Pvt. Ltd. (&quot;Sanitix&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), we respect and uphold your confidentiality. This Privacy Policy details how we collect, handle, store, and safeguard your personal data when you interact with our website, mobile application, and utility booking platforms.
+                      At Sanitix Technology (&quot;Sanitix&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), we respect and uphold your confidentiality. This Privacy Policy details how we collect, handle, store, and safeguard your personal data when you interact with our website, mobile application, and utility booking platforms.
                     </p>
                   </div>
 
@@ -630,7 +630,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                       If you have questions, feedback, or grievance claims regarding our privacy practices, please contact our designated Data Protection Officer:
                     </p>
                     <div style={{ marginTop: '8px', padding: '12px 16px', backgroundColor: 'rgba(255, 255, 255, 0.04)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)', color: '#FFFFFF', fontSize: '12.5px', lineHeight: 1.6 }}>
-                      <strong style={{ color: '#10B981' }}>Sanitix Technologies Pvt. Ltd. (A Pairow Group Company)</strong><br />
+                      <strong style={{ color: '#10B981' }}>Sanitix Technology (A Pairow Group Company)</strong><br />
                       Email: <a href="mailto:support@sanitix.in" style={{ color: '#10B981', textDecoration: 'none' }}>support@sanitix.in</a><br />
                       Helpline: <a href="tel:+912269710156" style={{ color: '#10B981', textDecoration: 'none' }}>+91 22697 10156</a><br />
                       Corporate Office: Gurugram, Haryana, India
@@ -645,7 +645,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <div>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '4px 12px', backgroundColor: 'rgba(16, 185, 129, 0.12)', border: '1px solid rgba(16, 185, 129, 0.25)', borderRadius: '9999px', fontSize: '11px', fontWeight: 600, color: '#10B981', marginBottom: '8px' }}>
-                    Sanitix Technologies Pvt. Ltd. (Pairow Group)
+                    Sanitix Technology (A Pairow Group Company)
                   </div>
                   <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#FFFFFF', margin: 0 }}>
                     Terms & Conditions
@@ -721,7 +721,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                       7. Limitation of Liability
                     </h4>
                     <p style={{ margin: 0, color: '#9CA3AF' }}>
-                      While Sanitix enforces strict delivery SLAs and quality controls, Sanitix Technologies Pvt. Ltd. shall not be held liable for indirect delays resulting from force majeure conditions, including unforeseen road closures, extreme weather calamities, municipal water grid rationing, or civil traffic restrictions.
+                      While Sanitix enforces strict delivery SLAs and quality controls, Sanitix Technology. shall not be held liable for indirect delays resulting from force majeure conditions, including unforeseen road closures, extreme weather calamities, municipal water grid rationing, or civil traffic restrictions.
                     </p>
                   </div>
 
@@ -733,7 +733,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                       For any questions regarding these terms, contract agreements, or customer rights, please contact our Legal & Compliance Desk:
                     </p>
                     <div style={{ marginTop: '8px', padding: '12px 16px', backgroundColor: 'rgba(255, 255, 255, 0.04)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)', color: '#FFFFFF', fontSize: '12.5px', lineHeight: 1.6 }}>
-                      <strong style={{ color: '#10B981' }}>Sanitix Technologies Pvt. Ltd.</strong><br />
+                      <strong style={{ color: '#10B981' }}>Sanitix Technology.</strong><br />
                       Email: <a href="mailto:support@sanitix.in" style={{ color: '#10B981', textDecoration: 'none' }}>support@sanitix.in</a><br />
                       Phone: <a href="tel:+912269710156" style={{ color: '#10B981', textDecoration: 'none' }}>+91 22697 10156</a><br />
                       Corporate Office: Gurugram, Haryana, India
