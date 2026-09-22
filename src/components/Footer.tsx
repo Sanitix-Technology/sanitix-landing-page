@@ -326,12 +326,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                     Partner with Us
                   </button>
                 </li>
-                <li>
-
-                </li>
-                <li>
-
-                </li>
               </ul>
             </div>
 
@@ -421,6 +415,41 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                     }}
                   >
                     Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://accounts.sanitix.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      color: '#8E9F97',
+                      fontSize: '13.5px',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      transition: 'color 0.08s ease, transform 0.08s ease, opacity 0.08s ease',
+                      textDecoration: 'none',
+                      display: 'inline-block'
+                    }}
+                    onMouseOver={(e) => (e.currentTarget.style.color = '#10B981')}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.color = '#8E9F97';
+                      e.currentTarget.style.opacity = '1';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                    onMouseDown={(e) => {
+                      e.currentTarget.style.opacity = '0.7';
+                      e.currentTarget.style.transform = 'scale(0.97)';
+                    }}
+                    onMouseUp={(e) => {
+                      e.currentTarget.style.opacity = '1';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                  >
+                    Sanitix Account
                   </a>
                 </li>
               </ul>
