@@ -139,8 +139,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                   <MapPin size={15} color="#10B981" style={{ marginTop: '3px', flexShrink: 0 }} />
                   <span style={{ fontSize: '13px', color: '#9CA3AF', lineHeight: 1.45 }}>
                     Sanitix Technologies Private Limited<br />
-                    D-702, Floor-7F, Tower-3, RMG Residency<br />
-                    Sector-37C, Gurgaon, Haryana – 122001
+                    Gurugram, Haryana, India
                   </span>
                 </div>
               </div>
@@ -634,7 +633,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                       <strong style={{ color: '#10B981' }}>Sanitix Technologies Private Limited (A Pairow Group Company)</strong><br />
                       Email: <a href="mailto:support@sanitix.in" style={{ color: '#10B981', textDecoration: 'none' }}>support@sanitix.in</a><br />
                       Helpline: <a href="tel:+912269710156" style={{ color: '#10B981', textDecoration: 'none' }}>+91 22697 10156</a><br />
-                      Corporate Office: D-702, Floor-7F, Tower-3, RMG Residency, Sector-37C, Gurgaon, Haryana – 122001, India
+                      Corporate Office: Gurugram, Haryana, India
                     </div>
                   </div>
                 </div>
@@ -737,7 +736,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking: _onOpenBooking, o
                       <strong style={{ color: '#10B981' }}>Sanitix Technologies Private Limited</strong><br />
                       Email: <a href="mailto:support@sanitix.in" style={{ color: '#10B981', textDecoration: 'none' }}>support@sanitix.in</a><br />
                       Phone: <a href="tel:+912269710156" style={{ color: '#10B981', textDecoration: 'none' }}>+91 22697 10156</a><br />
-                      Corporate Office: D-702, Floor-7F, Tower-3, RMG Residency, Sector-37C, Gurgaon, Haryana – 122001, India
+                      Corporate Office: Gurugram, Haryana, India
                     </div>
                   </div>
                 </div>
