@@ -135,5 +135,5 @@ The production build (`dist/`) is pre-configured for automated deployment on sta
 
 ## Copyright & License
 
-Copyright © 2026 Sanitix Technologies Pvt. Ltd. (A Pairow Group Company). All rights reserved.  
+Copyright © 2026 Sanitix Technologies Private Limited (A Pairow Group Company). All rights reserved.  
 Unauthorized distribution, copying, or reproduction of these source files is strictly prohibited.

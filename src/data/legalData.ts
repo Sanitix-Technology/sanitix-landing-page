@@ -27,11 +27,11 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cancellation', LegalD
     id: 'terms',
     tabName: 'Terms of Use',
     badge: 'Statutory Agreement',
-    title: 'SANITIX TECHNOLOGY — TERMS OF USE',
+    title: 'SANITIX TECHNOLOGIES PRIVATE LIMITED — TERMS OF USE',
     effectiveDate: 'September 2026',
     lastUpdated: 'September 2026',
     preamble: [
-      'These Terms of Use (“Terms”) govern your access to and use of the Sanitix website, mobile applications, software, digital platform and related services operated under the name Sanitix Technology (“Sanitix”, “we”, “us” or “our”).',
+      'These Terms of Use (“Terms”) govern your access to and use of the Sanitix website, mobile applications, software, digital platform and related services operated under the corporate name Sanitix Technologies Private Limited (“Sanitix”, “we”, “us” or “our”).',
       'By accessing the Platform, creating an account, requesting a Service, making a Booking or otherwise using Sanitix, you acknowledge that you have read, understood and agreed to these Terms, the Sanitix Privacy Policy and the cancellation and refund provisions contained in these Terms.',
       'If you do not agree with these Terms, please do not access or use the Platform.'
     ],
@@ -458,9 +458,8 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cancellation', LegalD
             "number": 43,
             "title": "LEGAL ENTITY AND CONTACT INFORMATION",
             "paragraphs": [
-                  "Current Legal/Trading Name: Sanitix Technology",
-                  "Future Corporate Entity: Sanitix Technologies Private Limited",
-                  "The future private limited entity name will apply only after the company has been formally incorporated and the relevant business operations and legal arrangements have been transitioned to that entity.",
+                  "Legal Entity Name: Sanitix Technologies Private Limited",
+                  "The company is incorporated under the Companies Act, 2013 and operates under the corporate name Sanitix Technologies Private Limited.",
                   "Registered Office:",
                   "Building No./Flat No.: 493",
                   "Road/Street: Maruti Kunj, Street No. C-11",
@@ -481,11 +480,11 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cancellation', LegalD
     id: 'privacy',
     tabName: 'Privacy Policy',
     badge: 'Compliance & Data Protection',
-    title: 'SANITIX TECHNOLOGY — PRIVACY POLICY',
+    title: 'SANITIX TECHNOLOGIES PRIVATE LIMITED — PRIVACY POLICY',
     effectiveDate: 'September 2026',
     lastUpdated: 'September 2026',
     preamble: [
-      'Sanitix Technology (“Sanitix”, “we”, “us” or “our”) respects the privacy of individuals who use its Platform.',
+      'Sanitix Technologies Private Limited (“Sanitix”, “we”, “us” or “our”) respects the privacy of individuals who use its Platform.',
       'This Privacy Policy explains how Sanitix collects, uses, processes, stores and shares personal information in connection with its website, mobile applications, Services and related digital platforms.',
       'Sanitix intends to operate its data practices in accordance with applicable Indian data-protection and consumer-protection requirements.'
     ],
@@ -733,7 +732,7 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cancellation', LegalD
             "number": 27,
             "title": "PRIVACY AND GRIEVANCE CONTACT",
             "paragraphs": [
-                  "Sanitix Technology",
+                  "Sanitix Technologies Private Limited",
                   "Building No./Flat No.: 493",
                   "Road/Street: Maruti Kunj, Street No. C-11",
                   "Locality/Sub Locality: Shyam Kunj",
@@ -750,7 +749,7 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cancellation', LegalD
     id: 'cancellation',
     tabName: 'Cancellation & Refund Policy',
     badge: 'Fair Cancellation Framework',
-    title: 'SANITIX TECHNOLOGY — CANCELLATION & REFUND POLICY',
+    title: 'SANITIX TECHNOLOGIES PRIVATE LIMITED — CANCELLATION & REFUND POLICY',
     effectiveDate: 'September 2026',
     lastUpdated: 'September 2026',
     preamble: [
@@ -861,7 +860,7 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cancellation', LegalD
             "number": 12,
             "title": "CONTACT",
             "paragraphs": [
-                  "Sanitix Technology",
+                  "Sanitix Technologies Private Limited",
                   "Building No./Flat No.: 493",
                   "Maruti Kunj, Street No. C-11",
                   "Shyam Kunj, Sohna",
